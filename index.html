@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadMaps Pro Enterprise — Inteligência Comercial, Auditoria Local e GeoGrid GPS</title>
+  <meta name="description" content="A plataforma de inteligência que transforma dados do Google Maps em contratos de consultoria recorrentes de R$ 1.500 a R$ 5.000/mês. Extrator, auditoria de 22 itens e GeoGrid GPS.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="LeadMaps Pro Enterprise — Inteligência Comercial B2B">
+  <meta property="og:description" content="Extraia empresas, audite 22 itens e feche contratos de consultoria recorrente com relatórios white-label.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              950: '#07090C',
+              900: '#0B0F14',
+              850: '#10151C',
+              800: '#111820',
+              750: '#16202C'
+            },
+            emerald: {
+              400: '#34D399',
+              500: '#10B981',
+              600: '#059669'
+            },
+            gold: {
+              400: '#E9C46A',
+              500: '#D4AF37',
+              600: '#B8860B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-[#07090C] text-slate-100 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
+
+  <!-- ========================================================================
+       1. HEADER FIXO (GLASSMORPHISM DARK OBSIDIAN)
+       ======================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Oficial -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="crosshair" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-extrabold text-lg tracking-tight text-white">LeadMaps<span class="text-emerald-400">PRO</span></span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-mono-code font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">v2.6 Enterprise</span>
+          </div>
+          <p class="text-[10px] text-slate-400 font-medium hidden sm:block">Inteligência Comercial & GeoGrid GPS</p>
+        </div>
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#hub" class="hover:text-emerald-400 transition-colors">Hub de Acessos</a>
+        <a href="#pilares" class="hover:text-emerald-400 transition-colors">Os 3 Pilares</a>
+        <a href="#fluxo" class="hover:text-emerald-400 transition-colors">Como Funciona</a>
+        <a href="#roi" class="hover:text-emerald-400 transition-colors">Calculadora ROI</a>
+        <a href="#planos" class="hover:text-emerald-400 transition-colors">Planos & Preços</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Ações Diretas & WhatsApp Status -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Status em Tempo Real do WhatsApp -->
+        <a href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20falar%20com%20o%20suporte%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" id="waHeaderStatus" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all" title="WhatsApp Oficial com Ricardo: (11) 97055-8412">
+          <span id="waHeaderDot" class="w-2 h-2 rounded-full bg-emerald-400 status-pulse-online"></span>
+          <span id="waHeaderText">Suporte Online</span>
+        </a>
+
+        <!-- Botão Login de Assinante -->
+        <a href="../leadmaps-pro/index.html#login" data-link="login" class="hidden lg:flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold border border-slate-700 bg-slate-900/80 text-slate-200 hover:text-white hover:border-slate-500 transition-all">
+          <i data-lucide="key-round" class="w-3.5 h-3.5 text-slate-400"></i>
+          <span>Entrar</span>
+        </a>
+
+        <!-- CTA Principal: Abrir Ferramenta -->
+        <a href="../leadmaps-pro/index.html" data-link="webApp" class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/25 transition-all hover:scale-[1.02] cursor-pointer">
+          <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+          <span>Abrir Ferramenta</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION COM CONSOLE DE INTELIGÊNCIA INTERATIVO
+       ======================================================================== -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
+    
+    <!-- Glow de Fundo -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 radial-glow-emerald pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        
+        <!-- Pill de Novidade -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mb-6">
+          <span class="flex h-2 w-2 rounded-full bg-emerald-400 status-pulse-online"></span>
+          <span>Tecnologia de Prospecção & Diagnóstico B2B • 2026</span>
+        </div>
+
+        <!-- Headline Master -->
+        <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+          Transforme o Google Maps em <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400">contratos de consultoria</span> recorrentes.
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8">
+          Extraia empresas qualificadas, audite 22 pontos de SEO Local e mostre ao cliente exatamente onde ele está perdendo vendas — com relatórios white-label prontos para fechar de <strong class="text-white font-semibold">R$ 1.500 a R$ 5.000/mês</strong>.
+        </p>
+
+        <!-- Ações do Hero -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10">
+          <a href="../leadmaps-pro/index.html" data-link="webApp" class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-base font-extrabold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-xl shadow-emerald-500/30 transition-all hover:scale-105 cursor-pointer">
+            <i data-lucide="sparkles" class="w-5 h-5 fill-current"></i>
+            <span>Abrir a Ferramenta Agora</span>
+          </a>
+
+          <a href="#planos" class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white transition-all">
+            <i data-lucide="tag" class="w-4 h-4 text-emerald-400"></i>
+            <span>Ver Planos & Preços</span>
+          </a>
+
+          <a href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20tirar%20d%C3%BAvidas%20sobre%20o%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold border border-emerald-500/30 bg-emerald-950/20 text-emerald-300 hover:bg-emerald-900/30 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span>Suporte VIP WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Microprova de Autoridade -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-400 font-mono-code">
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+            <span>22 Itens Auditados</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+            <span>GeoGrid GPS 1km a 20km</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+            <span>PDF White-Label c/ Sua Marca</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+            <span>WhatsApp Validado</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           MOCKUP INTERATIVO DO PRODUTO (CONSOLE DE INTELIGÊNCIA)
+           ==================================================================== -->
+      <div class="max-w-5xl mx-auto rounded-2xl border border-slate-800 bg-[#0B0F14] shadow-2xl shadow-emerald-950/40 overflow-hidden">
+        
+        <!-- Barra de Abas do Console -->
+        <div class="flex flex-wrap items-center justify-between border-b border-slate-800/80 px-4 py-3 bg-[#07090C]/90 gap-2">
+          
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="text-xs font-mono-code text-slate-400 ml-2 hidden sm:inline">leadmaps-console // live-preview</span>
+          </div>
+
+          <!-- Botões de Alternância de Abas -->
+          <div class="flex items-center gap-1 bg-slate-900/90 p-1 rounded-lg border border-slate-800">
+            <button data-mockup-tab="geogrid" class="px-3 py-1.5 rounded-md text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 transition-all flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span>GeoGrid GPS</span>
+            </button>
+            <button data-mockup-tab="auditoria" class="px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1.5 border border-transparent">
+              <i data-lucide="clipboard-check" class="w-3.5 h-3.5"></i>
+              <span>Auditoria 22 Itens</span>
+            </button>
+            <button data-mockup-tab="extrator" class="px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1.5 border border-transparent">
+              <i data-lucide="list-filter" class="w-3.5 h-3.5"></i>
+              <span>Extrator de Leads</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Painel 1: GeoGrid GPS (Simulador Interativo) -->
+        <div data-mockup-pane="geogrid" class="p-4 sm:p-6">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Grade do Mapa com Pins Interativos -->
+            <div class="lg:col-span-2 rounded-xl bg-[#10151C] border border-slate-800 p-4 relative overflow-hidden">
+              <div class="flex items-center justify-between mb-3 text-xs text-slate-400 font-mono-code">
+                <span>📍 Palavra-chave: "Clínica Odontológica"</span>
+                <span>Raio: 5.0 km • 9 Coordenadas</span>
+              </div>
+              
+              <!-- Simulação da Matriz 3x3 -->
+              <div class="grid grid-cols-3 gap-3 sm:gap-4 my-2 max-w-sm mx-auto aspect-square p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                <button data-rank="1" data-dist="1.2" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-emerald-500/20 border border-emerald-500/50 flex flex-col items-center justify-center p-2 hover:bg-emerald-500/30 transition-all cursor-pointer ring-2 ring-white scale-105">
+                  <span class="text-xs font-mono-code font-extrabold text-emerald-400">#1</span>
+                  <span class="text-[9px] text-slate-400">Centro</span>
+                </button>
+                <button data-rank="2" data-dist="1.8" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-emerald-500/20 border border-emerald-500/50 flex flex-col items-center justify-center p-2 hover:bg-emerald-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-emerald-400">#2</span>
+                  <span class="text-[9px] text-slate-400">Norte</span>
+                </button>
+                <button data-rank="6" data-dist="2.5" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-amber-500/20 border border-amber-500/50 flex flex-col items-center justify-center p-2 hover:bg-amber-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-amber-400">#6</span>
+                  <span class="text-[9px] text-slate-400">Leste</span>
+                </button>
+                <button data-rank="1" data-dist="0.8" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-emerald-500/20 border border-emerald-500/50 flex flex-col items-center justify-center p-2 hover:bg-emerald-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-emerald-400">#1</span>
+                  <span class="text-[9px] text-slate-400">Sede</span>
+                </button>
+                <button data-rank="4" data-dist="2.1" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-amber-500/20 border border-amber-500/50 flex flex-col items-center justify-center p-2 hover:bg-amber-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-amber-400">#4</span>
+                  <span class="text-[9px] text-slate-400">Oeste</span>
+                </button>
+                <button data-rank="12" data-dist="3.8" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-rose-500/20 border border-rose-500/50 flex flex-col items-center justify-center p-2 hover:bg-rose-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-rose-400">#12</span>
+                  <span class="text-[9px] text-slate-400">Sul</span>
+                </button>
+                <button data-rank="8" data-dist="3.2" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-amber-500/20 border border-amber-500/50 flex flex-col items-center justify-center p-2 hover:bg-amber-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-amber-400">#8</span>
+                  <span class="text-[9px] text-slate-400">Sudeste</span>
+                </button>
+                <button data-rank="15" data-dist="4.5" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-rose-500/20 border border-rose-500/50 flex flex-col items-center justify-center p-2 hover:bg-rose-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-rose-400">#15</span>
+                  <span class="text-[9px] text-slate-400">Sudoeste</span>
+                </button>
+                <button data-rank="18" data-dist="4.9" data-company="Odonto Prime Centro" class="geo-sim-point rounded-lg bg-rose-500/20 border border-rose-500/50 flex flex-col items-center justify-center p-2 hover:bg-rose-500/30 transition-all cursor-pointer">
+                  <span class="text-xs font-mono-code font-extrabold text-rose-400">#18</span>
+                  <span class="text-[9px] text-slate-400">Periferia</span>
+                </button>
+              </div>
+
+              <div class="text-[11px] text-center text-slate-400 mt-2">
+                👆 <em>Clique em qualquer ponto do grid para inspecionar os concorrentes naquela coordenada.</em>
+              </div>
+            </div>
+
+            <!-- Dados do Ponto Inspecionado -->
+            <div class="rounded-xl bg-[#10151C] border border-slate-800 p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-mono-code font-bold uppercase tracking-wider text-emerald-400">Diagnóstico de Posição Local</span>
+                <h4 id="geoSimCompany" class="text-base font-bold text-white mt-1">Odonto Prime Centro</h4>
+                
+                <div class="my-4 p-3 rounded-lg bg-slate-900 border border-slate-800">
+                  <div class="flex items-center justify-between text-xs mb-1">
+                    <span class="text-slate-400">Posição no Google Maps:</span>
+                    <span id="geoSimRank" class="text-emerald-400 font-bold text-sm">#1 Lugar</span>
+                  </div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400">Distância do Ponto:</span>
+                    <span id="geoSimDist" class="text-white font-mono-code">1.2 km do centro</span>
+                  </div>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-300">
+                  <p class="flex items-center gap-1.5 text-emerald-400">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                    <span>No Top 3: Captando 73% dos cliques</span>
+                  </p>
+                  <p class="flex items-center gap-1.5 text-rose-400">
+                    <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                    <span>A 3 km: Some para #12 (perdendo clientes)</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-slate-800">
+                <a href="../leadmaps-pro/index.html" data-link="webApp" class="w-full block text-center py-2 px-3 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500 hover:text-slate-950 transition-all">
+                  Executar GeoGrid na Ferramenta ➔
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Painel 2: Auditoria 22 Itens -->
+        <div data-mockup-pane="auditoria" class="p-4 sm:p-6 hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <div class="lg:col-span-2 rounded-xl bg-[#10151C] border border-slate-800 p-4">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h4 class="text-sm font-bold text-white">Relatório de Presença Digital: André Veículos</h4>
+                  <p class="text-xs text-slate-400">22 Itens Analisados • Google Maps & Presença Web</p>
+                </div>
+                <div class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold font-mono-code">
+                  Score: 48 / 100
+                </div>
+              </div>
+
+              <!-- Lista de Itens Auditados -->
+              <div class="space-y-2 max-h-64 overflow-y-auto pr-1">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-rose-500/20 text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    <span class="text-slate-200">Sem Meta Pixel de Remarketing instalado</span>
+                  </div>
+                  <span class="text-rose-400 font-mono-code font-bold">Grave</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-rose-500/20 text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    <span class="text-slate-200">Sem Tour Virtual 360° interno no Google</span>
+                  </div>
+                  <span class="text-rose-400 font-mono-code font-bold">Grave</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-amber-500/20 text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    <span class="text-slate-200">Sem Botão de Agendamento Direto no Perfil</span>
+                  </div>
+                  <span class="text-amber-400 font-mono-code font-bold">Médio</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-emerald-500/20 text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span class="text-slate-200">WhatsApp oficial verificado e responsivo</span>
+                  </div>
+                  <span class="text-emerald-400 font-mono-code font-bold">Ótimo</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card White-Label -->
+            <div class="rounded-xl bg-[#10151C] border border-slate-800 p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-mono-code font-bold uppercase tracking-wider text-emerald-400">Exportação White-Label</span>
+                <h4 class="text-base font-bold text-white mt-1">PDF com a SUA Marca</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Gere em 1 clique um relatório executivo com o logotipo e WhatsApp da sua agência. O cliente vê o diagnóstico pronto e fecha a consultoria.
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-slate-800">
+                <a href="../leadmaps-pro/index.html" data-link="webApp" class="w-full block text-center py-2.5 px-3 rounded-lg text-xs font-bold bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-all shadow-lg">
+                  Baixar Exemplo de PDF ➔
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Painel 3: Extrator em Massa -->
+        <div data-mockup-pane="extrator" class="p-4 sm:p-6 hidden">
+          <div class="rounded-xl bg-[#10151C] border border-slate-800 p-4 overflow-x-auto">
+            <div class="flex items-center justify-between mb-3 text-xs text-slate-400">
+              <span>Filtro: "Restaurantes em Campinas" • 87 Empresas Qualificadas</span>
+              <span class="text-emerald-400 font-mono-code">WhatsApp 100% Validado</span>
+            </div>
+
+            <table class="w-full text-left text-xs">
+              <thead class="text-slate-400 border-b border-slate-800 font-mono-code">
+                <tr>
+                  <th class="pb-2">Empresa</th>
+                  <th class="pb-2">Nicho</th>
+                  <th class="pb-2">WhatsApp</th>
+                  <th class="pb-2">Avaliação</th>
+                  <th class="pb-2 text-right">Ação</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 text-slate-200">
+                <tr>
+                  <td class="py-2.5 font-semibold text-white">Bistrô da Vila</td>
+                  <td class="py-2.5 text-slate-400">Gastronomia</td>
+                  <td class="py-2.5 font-mono-code text-emerald-400">(19) 99841-2210</td>
+                  <td class="py-2.5">⭐ 4.6 (182)</td>
+                  <td class="py-2.5 text-right"><span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px]">Auditar</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 font-semibold text-white">Cantina San Paolo</td>
+                  <td class="py-2.5 text-slate-400">Italiano</td>
+                  <td class="py-2.5 font-mono-code text-emerald-400">(19) 98711-3044</td>
+                  <td class="py-2.5">⭐ 4.2 (95)</td>
+                  <td class="py-2.5 text-right"><span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px]">Auditar</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 font-semibold text-white">Churrascaria Boi Nobre</td>
+                  <td class="py-2.5 text-slate-400">Churrascaria</td>
+                  <td class="py-2.5 font-mono-code text-emerald-400">(19) 99120-4491</td>
+                  <td class="py-2.5">⭐ 3.9 (420)</td>
+                  <td class="py-2.5 text-right"><span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px]">Auditar</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. HUB CENTRAL DE ACESSOS RÁPIDOS (BENTO GRID DE 6 MÓDULOS)
+       ======================================================================== -->
+  <section id="hub" class="py-20 bg-[#0B0F14] border-t border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Centro de Operação Unificado</span>
+        <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
+          Seu Centro de Operação LeadMaps
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Acesse em 1 clique qualquer recurso da plataforma, suporte oficial ou central de assinaturas.
+        </p>
+      </div>
+
+      <!-- Bento Grid de 6 Módulos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Card 1: Ferramenta Web (Destaque Principal) -->
+        <div class="bento-card bento-card-highlight p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center mb-4 text-emerald-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Ferramenta Web Principal</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Abra a aplicação completa no navegador. Extraia empresas do Google Maps, audite presença digital e gere GeoGrid de ranking.
+            </p>
+          </div>
+          <a href="../leadmaps-pro/index.html" data-link="webApp" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition-all shadow-md">
+            <span>Abrir Ferramenta Web</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Card 2: Login de Assinante -->
+        <div class="bento-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="key" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Login & Ativação de Chave</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Acesse sua conta ou insira sua chave de licença (Mensal, Anual ou Vitalícia) para desbloquear a plataforma.
+            </p>
+          </div>
+          <a href="../leadmaps-pro/index.html#login" data-link="login" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs font-bold transition-all">
+            <span>Acessar Minha Conta</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Card 3: Extensão Chrome -->
+        <div class="bento-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center mb-4 text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="chrome" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Extensão do Google Chrome</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Instale o coletor direto na barra do seu navegador para raspar empresas enquanto você navega no Google Maps.
+            </p>
+          </div>
+          <a href="../leadmaps-pro/extensao-chrome/export.html" data-link="chromeExtension" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs font-bold transition-all">
+            <span>Baixar Extensão Chrome</span>
+            <i data-lucide="download" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Card 4: Planos & Preços -->
+        <div class="bento-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="credit-card" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Planos de Assinatura</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Conheça os planos Mensal (R$ 97), Anual VIP (R$ 497) e a Licença Vitalícia definitiva com ativação instantânea via PIX.
+            </p>
+          </div>
+          <a href="#planos" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs font-bold transition-all">
+            <span>Comparar Planos</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Card 5: Suporte VIP com Ricardo -->
+        <div class="bento-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center mb-4 text-emerald-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-bold text-white">Suporte VIP no WhatsApp</h3>
+              <span class="text-[10px] font-mono-code text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Direto c/ Ricardo</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Atendimento humano e direto no <strong>(11) 97055-8412</strong>. Tire dúvidas comerciais, técnicas ou solicite ativação.
+            </p>
+          </div>
+          <a href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20falar%20com%20o%20suporte%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md">
+            <span>Chamar Ricardo no WhatsApp</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Card 6: Guia de Prospecção & Metodologia -->
+        <div class="bento-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center mb-4 text-teal-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Metodologia de Fechamento</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Aprenda a apresentar o relatório para o dono da empresa e fechar contratos recorrentes sem parecer vendedor chato.
+            </p>
+          </div>
+          <a href="#fluxo" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs font-bold transition-all">
+            <span>Ver Passo a Passo</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. A DOR DO CONSULTOR: POR QUE MANDAR LISTA NÃO FUNCIONA
+       ======================================================================== -->
+  <section class="py-20 bg-[#07090C]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-rose-400">A Realidade do Mercado</span>
+        <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-4">
+          O problema não é encontrar empresas.<br><span class="text-slate-400 font-semibold">É transformar empresas em contrato assinado.</span>
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300">
+          A maioria dos scrapers apenas cospe planilhas frias de telefones. O LeadMaps Pro Enterprise foi construído para criar um <strong>diagnóstico comercial impossível de ignorar</strong>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- O Jeito Antigo / Amador -->
+        <div class="rounded-2xl border border-rose-500/20 bg-rose-950/10 p-6 sm:p-8">
+          <div class="flex items-center gap-2 text-rose-400 text-xs font-mono-code font-bold uppercase tracking-wider mb-4">
+            <i data-lucide="x-circle" class="w-4 h-4"></i>
+            <span>Método Tradicional (Amador)</span>
+          </div>
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-400 font-bold">✕</span>
+              <span>Disparar mensagens genéricas: <em>"Quer mais clientes no seu site?"</em> (Ignorado em 98% das vezes).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-400 font-bold">✕</span>
+              <span>Passar 2 horas auditando manualmente o perfil do Google Meu Negócio do cliente.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-400 font-bold">✕</span>
+              <span>O cliente não entende termos técnicos de SEO e acha que você quer "vender fumaça".</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-400 font-bold">✕</span>
+              <span>Propostas sem apoio visual que são comparadas pelo menor preço.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- O Método LeadMaps Pro -->
+        <div class="rounded-2xl border border-emerald-500/40 bg-emerald-950/10 p-6 sm:p-8 relative">
+          <div class="flex items-center gap-2 text-emerald-400 text-xs font-mono-code font-bold uppercase tracking-wider mb-4">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Com LeadMaps Pro Enterprise</span>
+          </div>
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Abordagem de consultor: <em>"Fizemos uma auditoria de 22 itens da sua clínica na sua rua e encontramos 3 falhas graves."</em></span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Auditoria completa em 30 segundos com pontuação visual de 0 a 100.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>GeoGrid GPS mostra no mapa onde ele perde clientes para o concorrente.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Relatório em PDF com o logotipo da sua agência que justifica contratos de R$ 1.500 a R$ 5.000/mês.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. OS 3 PILARES TECNOLÓGICOS DO LEADMAPS PRO
+       ======================================================================== -->
+  <section id="pilares" class="py-24 bg-[#0B0F14] border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Tecnologia Proprietária</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
+          Os 3 Pilares de Fechamento do LeadMaps
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Tudo o que sua agência precisa para prospectar, auditar e reter clientes recorrentes em uma única plataforma.
+        </p>
+      </div>
+
+      <!-- Pilar 1 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+            PILAR 01 • PROSPECÇÃO EM MASSA
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+            Extrator do Google Maps com WhatsApp Validado
+          </h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+            Extraia empresas reais em qualquer cidade, bairro ou raio geográfico. O sistema limpa, valida o formato dos números e identifica WhatsApp oficial para você não perder tempo com telefones inválidos.
+          </p>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Filtros avançados por nicho, cidade, avaliação e presença de site.</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Disparo direto para o WhatsApp do responsável em 1 clique.</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Exportação completa para CSV / Excel e integração com seu CRM.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-[#10151C] p-6 shadow-xl">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 text-xs font-mono-code text-slate-400">
+            <span>Busca: "Oficinas Mecânicas"</span>
+            <span class="text-emerald-400">64 Encontradas</span>
+          </div>
+          <div class="space-y-2.5">
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between text-xs">
+              <div>
+                <strong class="text-white">Auto Mecânica São Jorge</strong>
+                <p class="text-slate-400 text-[11px] font-mono-code">(11) 97120-8833 • WhatsApp Ativo</p>
+              </div>
+              <span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px]">Pronto p/ Abordagem</span>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between text-xs">
+              <div>
+                <strong class="text-white">Centro Automotivo ABC</strong>
+                <p class="text-slate-400 text-[11px] font-mono-code">(11) 98300-1122 • WhatsApp Ativo</p>
+              </div>
+              <span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px]">Pronto p/ Abordagem</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 2 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 lg:flex-row-reverse">
+        <div class="lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+            PILAR 02 • DIAGNÓSTICO WHITE-LABEL
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+            Auditoria Profunda de 22 Itens com Relatório em PDF
+          </h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+            O cliente nunca mais vai dizer que "está tudo bem com a empresa dele na internet". Em 30 segundos, o LeadMaps Pro analisa 22 pontos críticos e gera um PDF executivo com a SUA logomarca.
+          </p>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Verifica Meta Pixel, Tour 360°, Botão de Agendamento e Velocidade.</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Score de Saúde Digital com cores de alerta (Verde, Amarelo e Vermelho).</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>PDF White-Label para imprimir ou enviar no WhatsApp do tomador de decisão.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:order-1 rounded-2xl border border-slate-800 bg-[#10151C] p-6 shadow-xl">
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">A</div>
+                <span class="text-xs font-bold text-white">Sua Agência Digital</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono-code">Auditoria Oficial</span>
+            </div>
+            <div class="text-xs text-slate-300 space-y-2 mb-4">
+              <p><strong>Cliente:</strong> Dra. Juliana — Clínica Dermatológica</p>
+              <p><strong>Diagnóstico:</strong> 8 Falhas Críticas de Conversão Detectadas</p>
+            </div>
+            <div class="p-2.5 rounded bg-rose-950/40 border border-rose-500/30 text-rose-200 text-xs">
+              ⚠️ <em>"Seu perfil não possui link de WhatsApp direto nem Pixel ativo. Você está perdendo cerca de 30 agendamentos por semana."</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 3 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+            PILAR 03 • RANKING LOCAL GPS
+          </div>
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+            GeoGrid GPS de Ranking (Raio de 1km a 20km)
+          </h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+            O posicionamento no Google muda de rua para rua. O GeoGrid mostra exatamente em quais bairros a empresa está em 1º lugar e em quais ruas ela simplesmente desaparece do mapa.
+          </p>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Grid GPS com coordenadas reais (raio configurável de 1 a 20 km).</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Pins coloridos: Verde (#1 a #3), Amarelo (#4 a #9) e Vermelho (#10+).</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+              <span>A arma perfeita para justificar a renovação mensal do contrato de SEO Local.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-[#10151C] p-6 shadow-xl">
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-6 flex flex-col items-center">
+            <div class="text-xs text-slate-400 mb-4 font-mono-code">Mapa de Calor: Presença Geográfica</div>
+            <div class="grid grid-cols-3 gap-3 w-48 h-48">
+              <div class="rounded bg-emerald-500/40 border border-emerald-500 flex items-center justify-center font-bold text-white text-xs">#1</div>
+              <div class="rounded bg-emerald-500/40 border border-emerald-500 flex items-center justify-center font-bold text-white text-xs">#2</div>
+              <div class="rounded bg-amber-500/40 border border-amber-500 flex items-center justify-center font-bold text-white text-xs">#5</div>
+              <div class="rounded bg-emerald-500/40 border border-emerald-500 flex items-center justify-center font-bold text-white text-xs">#1</div>
+              <div class="rounded bg-emerald-500/40 border border-emerald-500 flex items-center justify-center font-bold text-white text-xs">#1</div>
+              <div class="rounded bg-rose-500/40 border border-rose-500 flex items-center justify-center font-bold text-white text-xs">#14</div>
+              <div class="rounded bg-amber-500/40 border border-amber-500 flex items-center justify-center font-bold text-white text-xs">#7</div>
+              <div class="rounded bg-rose-500/40 border border-rose-500 flex items-center justify-center font-bold text-white text-xs">#11</div>
+              <div class="rounded bg-rose-500/40 border border-rose-500 flex items-center justify-center font-bold text-white text-xs">#19</div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-4 text-center">
+              Visual imediato: o empresário entende na hora por que o telefone não toca.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. FLUXO OPERACIONAL EM 4 PASSOS
+       ======================================================================== -->
+  <section id="fluxo" class="py-20 bg-[#07090C] border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Passo a Passo Simples</span>
+        <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
+          Como Fechar Clientes em 4 Passos
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Você não precisa de equipe grande nem de programação. Siga o fluxo validado:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bento-card p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-mono-code font-extrabold text-lg flex items-center justify-center mb-4">
+            01
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">Busque o Nicho</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Digite o nicho (ex: "Clínicas", "Academias", "Restaurantes") e a cidade. Em segundos você tem dezenas de leads com WhatsApp.
+          </p>
+        </div>
+
+        <div class="bento-card p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-mono-code font-extrabold text-lg flex items-center justify-center mb-4">
+            02
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">Audite em 1 Clique</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Clique em auditar. O LeadMaps Pro analisa 22 pontos do perfil, fotos, avaliações, site e posicionamento no GeoGrid.
+          </p>
+        </div>
+
+        <div class="bento-card p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-mono-code font-extrabold text-lg flex items-center justify-center mb-4">
+            03
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">Envie o Relatório</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Exporte o PDF com o logotipo e contatos da sua agência e envie no WhatsApp do tomador de decisão com script pronto.
+          </p>
+        </div>
+
+        <div class="bento-card p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-mono-code font-extrabold text-lg flex items-center justify-center mb-4">
+            04
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">Feche a Recorrência</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Apresente a solução para corrigir as falhas e cobre uma mensalidade de R$ 1.500 a R$ 5.000 para gerenciar o Google do cliente.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. CALCULADORA INTERATIVA DE RETORNO SOBRE INVESTIMENTO (ROI B2B)
+       ======================================================================== -->
+  <section id="roi" class="py-24 bg-[#0B0F14]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Economia Matemática Real</span>
+        <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
+          Quantos Contratos Você Precisa Fechar Para o LeadMaps se Pagar?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Simule abaixo o ticket médio da sua consultoria e veja o retorno financeiro imediato:
+        </p>
+      </div>
+
+      <div class="bento-card p-6 sm:p-10 border border-slate-800 bg-[#10151C]">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          
+          <!-- Slider 1: Ticket Médio Mensal -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-bold text-slate-300">Ticket Médio da sua Consultoria:</label>
+              <span id="roiTicketDisplay" class="text-sm font-extrabold font-mono-code text-emerald-400">R$ 2.000</span>
+            </div>
+            <input id="roiTicketSlider" type="range" min="1000" max="6000" step="250" value="2000" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-mono-code">
+              <span>R$ 1.000</span>
+              <span>R$ 3.500</span>
+              <span>R$ 6.000</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Clientes Fechados -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-bold text-slate-300">Clientes Fechados no Mês:</label>
+              <span id="roiClientsDisplay" class="text-sm font-extrabold font-mono-code text-emerald-400">2 clientes</span>
+            </div>
+            <input id="roiClientsSlider" type="range" min="1" max="10" step="1" value="2" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-mono-code">
+              <span>1 cliente</span>
+              <span>5 clientes</span>
+              <span>10 clientes</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Resultados da Simulação -->
+        <div class="rounded-xl bg-slate-950 p-6 border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+          
+          <div>
+            <span class="text-xs text-slate-400">Faturamento Mensal Recorrente:</span>
+            <div id="roiMonthlyRevenue" class="text-2xl sm:text-3xl font-extrabold font-heading text-white mt-1">
+              R$ 4.000
+            </div>
+          </div>
+
+          <div>
+            <span class="text-xs text-slate-400">Faturamento Anual Projetado:</span>
+            <div id="roiAnnualRevenue" class="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-400 mt-1">
+              R$ 48.000
+            </div>
+          </div>
+
+          <div>
+            <span class="text-xs text-slate-400">Múltiplo de Retorno (ROI):</span>
+            <div id="roiMultipleDisplay" class="text-2xl sm:text-3xl font-extrabold font-mono-code text-gold-400 mt-1">
+              96x
+            </div>
+          </div>
+
+        </div>
+
+        <div id="roiPaybackMessage" class="mt-6 text-center text-xs sm:text-sm text-slate-300">
+          Fechando <strong>2 clientes</strong> a <strong>R$ 2.000/mês</strong>, o LeadMaps Pro se paga <strong>96 vezes</strong> no plano anual!
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="#planos" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-extrabold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-lg hover:scale-105">
+            <span>Quero Fechar Mais Contratos com LeadMaps</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. TABELA COMPARATIVA DE PLANOS & ANCORAGEM
+       ======================================================================== -->
+  <section id="planos" class="py-24 bg-[#07090C] border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Investimento Acessível</span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
+          Escolha o Plano Ideal Para a Sua Operação
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Menos que um café por dia para equipar sua agência com a máquina definitiva de prospecção.
+        </p>
+      </div>
+
+      <!-- Grid de 3 Planos -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Plano 1: Mensal Pro -->
+        <div class="bento-card p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-white mb-1">Mensal Pro</h3>
+            <p class="text-xs text-slate-400 mb-6">Ideal para começar rápido e testar.</p>
+
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-4xl font-extrabold font-heading text-white">R$ 97</span>
+              <span class="text-sm text-slate-400">/mês</span>
+            </div>
+
+            <ul class="space-y-3.5 text-xs text-slate-300 mb-8">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Extrator de Leads do Google Maps</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Auditoria Completa de 22 Itens</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>GeoGrid GPS de Ranking Local</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Relatórios em PDF White-Label</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Validação Automática de WhatsApp</span>
+              </li>
+              <li class="flex items-center gap-2 text-slate-400">
+                <i data-lucide="check" class="w-4 h-4 text-slate-500"></i>
+                <span>Suporte padrão por ticket e WhatsApp</span>
+              </li>
+            </ul>
+          </div>
+
+          <a id="planBuyMonthly" href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20ativar%20o%20Plano%20Mensal%20Pro%20(R$%2097/m%C3%AAs)%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 px-4 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-white transition-all">
+            Começar no Mensal (R$ 97/mês)
+          </a>
+        </div>
+
+        <!-- Plano 2: Anual VIP (Mais Escolhido / Destaque) -->
+        <div class="bento-card bento-card-highlight p-8 flex flex-col justify-between relative scale-105 border-emerald-500/60 shadow-2xl shadow-emerald-950/60 bg-[#121A24]">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-mono-code font-extrabold bg-emerald-500 text-slate-950 uppercase tracking-wider shadow-md">
+            ⭐ MAIS ESCOLHIDO • ECONOMIA DE 57%
+          </div>
+
+          <div>
+            <h3 class="text-xl font-extrabold text-white mb-1">Anual VIP</h3>
+            <p class="text-xs text-emerald-400/90 mb-6">O melhor custo-benefício para agências sérias.</p>
+
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="text-slate-500 line-through text-sm">R$ 1.164</span>
+              <span class="text-4xl font-extrabold font-heading text-white">R$ 497</span>
+              <span class="text-sm text-slate-400">/ano</span>
+            </div>
+            <p class="text-xs font-mono-code text-emerald-400 mb-6 font-semibold">Equivalente a apenas R$ 41,41/mês</p>
+
+            <ul class="space-y-3.5 text-xs text-slate-200 mb-8">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <strong class="text-white">Tudo incluso no Plano Mensal</strong>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Consultas e auditorias ilimitadas no ano</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Extensão Chrome Oficial Liberada</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Suporte VIP Prioritário c/ Ricardo no WhatsApp</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Scripts de Abordagem & Fechamento em PDF</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Garantia Blindada de 7 Dias Incondicional</span>
+              </li>
+            </ul>
+          </div>
+
+          <a id="planBuyAnnual" href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20assinar%20o%20Plano%20Anual%20VIP%20(R$%20497/ano)%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="w-full text-center py-4 px-4 rounded-xl text-sm font-extrabold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-xl shadow-emerald-500/30 hover:scale-105">
+            Assinar Plano Anual VIP (R$ 497)
+          </a>
+        </div>
+
+        <!-- Plano 3: Vitalício Master -->
+        <div class="bento-card p-8 flex flex-col justify-between border-gold-500/30">
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded text-[10px] font-mono-code font-bold bg-gold-500/10 text-gold-400 border border-gold-500/30 mb-2">
+              ATIVO DEFINITIVO
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1">Vitalício Master</h3>
+            <p class="text-xs text-slate-400 mb-6">Acesso para sempre. Sem nenhuma mensalidade futura.</p>
+
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-4xl font-extrabold font-heading text-white">R$ 997</span>
+              <span class="text-xs text-slate-400 font-mono-code">taxa única</span>
+            </div>
+
+            <ul class="space-y-3.5 text-xs text-slate-300 mb-8">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
+                <strong class="text-white">Acesso Vitalício sem mensalidades</strong>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
+                <span>Todas as atualizações futuras inclusas</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
+                <span>Chave Master de Assinante Permanente</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
+                <span>Canal direto no WhatsApp do Ricardo</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-gold-400"></i>
+                <span>Modelos de Contrato de Prestação de Serviços</span>
+              </li>
+            </ul>
+          </div>
+
+          <a id="planBuyLifetime" href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20garantir%20a%20Licen%C3%A7a%20Vital%C3%ADcia%20Master%20(R$%20997)%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 px-4 rounded-xl text-xs font-bold border border-gold-500/40 bg-gold-950/20 hover:bg-gold-900/30 text-gold-300 hover:text-white transition-all">
+            Garantir Licença Vitalícia (R$ 997)
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Selos de Confiança e Pagamento -->
+      <div class="mt-14 p-6 rounded-2xl bg-slate-950 border border-slate-800 max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+          <span>Pagamento Seguro via PIX ou Cartão em até 12x</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="zap" class="w-5 h-5 text-amber-400"></i>
+          <span>Liberação Imediata da Chave de Acesso</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="award" class="w-5 h-5 text-blue-400"></i>
+          <span>Garantia de 7 Dias Incondicional</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. GARANTIA BLINDADA DE 7 DIAS
+       ======================================================================== -->
+  <section class="py-20 bg-[#0B0F14] border-t border-slate-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="shield" class="w-8 h-8"></i>
+      </div>
+
+      <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white mb-4">
+        Garantia Blindada de 7 Dias — Risco Zero
+      </h2>
+
+      <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto mb-8">
+        Acesse a plataforma, extraia leads, faça auditorias de 22 pontos e teste o GeoGrid na sua cidade. Se por qualquer motivo você não achar que a ferramenta vale pelo menos 10x o que você investiu, basta nos avisar no WhatsApp que devolvemos 100% do seu dinheiro. Sem pegadinhas, sem burocracia.
+      </p>
+
+      <a href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20come%C3%A7ar%20com%20a%20Garantia%20Blindada%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-slate-900 border border-slate-700 text-slate-200 hover:text-white hover:border-slate-500 transition-all">
+        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+        <span>Fale Diretamente com o Fundador (Ricardo) no WhatsApp</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. FAQ INTELIGENTE INTERATIVO (ACCORDION)
+       ======================================================================== -->
+  <section id="faq" class="py-24 bg-[#07090C] border-t border-slate-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Tire Suas Dúvidas</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-sm text-slate-400">
+          Respostas claras para as principais dúvidas sobre o LeadMaps Pro:
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="bento-card faq-item overflow-hidden">
+          <button class="w-full text-left p-5 sm:p-6 font-bold text-white text-sm sm:text-base flex items-center justify-between gap-4 faq-trigger cursor-pointer">
+            <span>Preciso saber programação para usar o LeadMaps Pro?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-emerald-400 faq-chevron transition-transform"></i>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Não! A interface é 100% visual e intuitiva. Basta digitar o nicho e a cidade que o software faz toda a busca, auditoria e geração de relatórios de forma automatizada.
+          </div>
+        </div>
+
+        <div class="bento-card faq-item overflow-hidden">
+          <button class="w-full text-left p-5 sm:p-6 font-bold text-white text-sm sm:text-base flex items-center justify-between gap-4 faq-trigger cursor-pointer">
+            <span>Os relatórios em PDF são realmente White-Label?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-emerald-400 faq-chevron transition-transform"></i>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Sim! Você pode configurar o nome da sua agência, seu WhatsApp oficial e seus contatos. O cliente final não vê nenhuma menção à nossa marca — todo o crédito e autoridade vão para a sua agência.
+          </div>
+        </div>
+
+        <div class="bento-card faq-item overflow-hidden">
+          <button class="w-full text-left p-5 sm:p-6 font-bold text-white text-sm sm:text-base flex items-center justify-between gap-4 faq-trigger cursor-pointer">
+            <span>O GeoGrid GPS funciona em qualquer cidade do Brasil?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-emerald-400 faq-chevron transition-transform"></i>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Sim! O GeoGrid utiliza as coordenadas oficiais de latitude e longitude do Google Maps. Funciona de capitais até cidades do interior, com raios configuráveis de 1 km até 20 km.
+          </div>
+        </div>
+
+        <div class="bento-card faq-item overflow-hidden">
+          <button class="w-full text-left p-5 sm:p-6 font-bold text-white text-sm sm:text-base flex items-center justify-between gap-4 faq-trigger cursor-pointer">
+            <span>Como recebo minha chave de acesso após o pagamento?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-emerald-400 faq-chevron transition-transform"></i>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Assim que confirmado o pagamento via PIX ou Cartão, sua Chave de Licença (formato LMPRO-XXXX) é gerada e enviada diretamente para o seu WhatsApp oficial para você ativar e começar na hora.
+          </div>
+        </div>
+
+        <div class="bento-card faq-item overflow-hidden">
+          <button class="w-full text-left p-5 sm:p-6 font-bold text-white text-sm sm:text-base flex items-center justify-between gap-4 faq-trigger cursor-pointer">
+            <span>Posso cancelar o plano mensal a qualquer momento?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-emerald-400 faq-chevron transition-transform"></i>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Com certeza! Sem fidelidade e sem multas. Você cancela quando quiser com 1 clique direto pelo WhatsApp do suporte.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. CTA FINAL DE FECHAMENTO
+       ======================================================================== -->
+  <section class="py-24 bg-[#0B0F14] relative overflow-hidden border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <span class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-400">Comece Hoje Mesmo</span>
+      <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-6">
+        Pare de Prospectar no Escuro.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Comece a Fechar Contratos de Alto Valor.</span>
+      </h2>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Junte-se aos consultores e agências que usam o LeadMaps Pro Enterprise para transformar dados públicos do Google em receita recorrente garantida.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="../leadmaps-pro/index.html" data-link="webApp" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-extrabold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-xl shadow-emerald-500/30 hover:scale-105 cursor-pointer">
+          Abrir a Ferramenta Agora ➔
+        </a>
+
+        <a href="https://wa.me/5511970558412?text=Ol%C3%A1%20Ricardo!%20Quero%20adquirir%20minha%20licen%C3%A7a%20do%20LeadMaps%20Pro!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-xl text-sm font-bold border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 transition-all">
+          Chamar no WhatsApp (11) 97055-8412
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       12. FOOTER COMPLETO INSTITUCIONAL
+       ======================================================================== -->
+  <footer class="py-12 bg-[#07090C] border-t border-slate-800/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+          <i data-lucide="crosshair" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <span class="font-heading font-bold text-white text-sm">LeadMaps PRO Enterprise</span>
+          <p class="text-[11px] text-slate-400">© 2026 LeadMaps Pro • Todos os direitos reservados.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400">
+        <a href="#hub" class="hover:text-emerald-400 transition-colors">Hub Central</a>
+        <a href="#pilares" class="hover:text-emerald-400 transition-colors">Os 3 Pilares</a>
+        <a href="#planos" class="hover:text-emerald-400 transition-colors">Planos & Preços</a>
+        <a href="https://wa.me/5511970558412" target="_blank" class="hover:text-emerald-400 transition-colors">Suporte Oficial</a>
+      </div>
+
+      <div class="text-[11px] text-slate-400 text-center md:text-right">
+        <span>Desenvolvido com excelência por <strong>Severino & Ricardo</strong></span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Inicializa ícones do Lucide
+    lucide.createIcons();
+  </script>
+</body>
+</html>
